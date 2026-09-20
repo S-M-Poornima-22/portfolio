@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poornima | Software & Data Engineer</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            deep: {
+              bg: '#080C14',
+              surface: '#0E1726',
+              card: '#121D30',
+              border: '#1E293B',
+              text: '#F8FAFC',
+              muted: '#94A3B8',
+              cyan: '#38BDF8',
+              accent: '#6366F1'
+            },
+            light: {
+              bg: '#EBF5FF',
+              surface: '#FFFFFF',
+              card: '#F0F7FF',
+              border: '#BAE6FD',
+              text: '#0C4A6E',
+              muted: '#0369A1',
+              cyan: '#0284C7',
+              accent: '#2563EB'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .modal-backdrop {
+      background-color: rgba(4, 7, 13, 0.94);
+      backdrop-filter: blur(12px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #090E17;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #06B6D4;
+    }
+  </style>
+</head>
+
+<body class="bg-[#EEF6FF] text-light-text dark:bg-deep-bg dark:text-deep-text transition-colors duration-300 antialiased selection:bg-cyan-500 selection:text-white overflow-x-hidden">
+
+  <!-- TOP AMBIENT GLOW -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[350px] sm:h-[400px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/10 to-transparent blur-[120px] pointer-events-none -z-10 dark:opacity-100 opacity-70 transition-opacity"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="sticky top-0 z-50 glass-card bg-white/85 dark:bg-deep-surface/80 border-b border-sky-200/80 dark:border-deep-border shadow-sm dark:shadow-none">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-18 py-3 flex items-center justify-between">
+      
+      <!-- Brand Indicator -->
+      <a href="#" class="p-2 sm:p-2.5 rounded-xl bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-500/30 dark:border-cyan-500/20 hover:border-sky-500 dark:hover:border-cyan-400 transition flex items-center gap-2" aria-label="Home">
+        <span class="text-[11px] sm:text-xs font-mono-code font-bold text-sky-600 dark:text-cyan-400 tracking-wider">POORNIMA S M</span>
+      </a>
+
+      <div class="flex items-center gap-4 sm:gap-8 text-sm font-semibold">
+        <div class="hidden md:flex items-center gap-6 text-slate-600 dark:text-deep-muted font-heading">
+          <a href="#about" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">About</a>
+          <a href="#skills" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">Skills</a>
+          <a href="#projects" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">Projects</a>
+          <a href="#internships" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">Internships</a>
+          <a href="#academics" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">Academics</a>
+          <a href="#credentials" class="hover:text-sky-600 dark:hover:text-cyan-400 transition">Certificates</a>
+        </div>
+
+        <div class="flex items-center gap-2.5 sm:gap-4">
+          <button id="theme-toggle" class="p-2 sm:p-2.5 rounded-xl border border-sky-200 dark:border-deep-border hover:border-sky-400 dark:hover:border-cyan-400 transition bg-white dark:bg-deep-card shadow-sm" aria-label="Toggle Theme">
+            <span id="theme-toggle-icon" class="text-sm">🌙</span>
+          </button>
+          
+          <a href="#contact" class="px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-500 dark:to-indigo-600 text-white shadow-md shadow-sky-500/20 dark:shadow-cyan-500/20 hover:opacity-90 transition duration-200">
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-12 sm:space-y-16 lg:space-y-20">
+
+    <!-- 1. HERO SECTION -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-2">
+      
+      <!-- Left Column: Intro -->
+      <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-sky-500/15 dark:bg-cyan-500/10 text-sky-600 dark:text-cyan-400 border border-sky-500/30 dark:border-cyan-500/20 font-mono-code">
+          <span class="w-2 h-2 rounded-full bg-sky-500 dark:bg-cyan-400 animate-ping"></span>
+          Think Curiously. Build Purposefully.
+        </div>
+
+        <div class="space-y-1">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-cyan-600 to-blue-700 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 uppercase">
+              POORNIMA.
+            </span>
+          </h1>
+        </div>
+
+        <!-- Hero Introduction Narrative -->
+        <div class="space-y-3 max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+          <p>
+            I'm a <span class="text-sky-600 dark:text-cyan-400 font-bold">Computer Science Engineering Graduate</span> specializing in <strong class="text-slate-900 dark:text-white font-semibold">Python, SQL, Power BI</strong>, and <strong class="text-slate-900 dark:text-white font-semibold">Machine Learning</strong>. Eager to engineer solutions for real-world business challenges and grow as a <strong class="text-slate-900 dark:text-white font-semibold">Data Analyst</strong>.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 font-heading">
+          <a href="#projects" class="w-full sm:w-auto text-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-500 dark:to-indigo-600 text-white shadow-xl shadow-sky-500/20 dark:shadow-cyan-500/20 hover:scale-[1.02] transition duration-200 flex items-center justify-center gap-2">
+            <span>Explore Projects</span>
+            <span>&darr;</span>
+          </a>
+          <a href="#contact" class="w-full sm:w-auto text-center px-6 sm:px-6 py-3 sm:py-3.5 rounded-xl font-bold text-sm border border-sky-300/80 dark:border-deep-border hover:border-sky-500 dark:hover:border-cyan-400 bg-white/90 dark:bg-deep-surface transition hover:scale-[1.02] duration-200 text-slate-800 dark:text-white shadow-sm">
+            Get in Touch
+          </a>
+        </div>
+
+        <!-- Proof Metrics Grid -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-5 sm:pt-6 border-t border-sky-200/80 dark:border-deep-border">
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-sky-600 dark:text-deep-cyan font-mono-code">9.01</div>
+            <div class="text-[10px] sm:text-xs text-sky-700 dark:text-deep-muted font-bold uppercase tracking-wider mt-0.5">B.E. CGPA</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-indigo-400 font-mono-code">91%</div>
+            <div class="text-[10px] sm:text-xs text-blue-700 dark:text-deep-muted font-bold uppercase tracking-wider mt-0.5">Precision</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-600 dark:text-sky-400 font-mono-code">02</div>
+            <div class="text-[10px] sm:text-xs text-cyan-700 dark:text-deep-muted font-bold uppercase tracking-wider mt-0.5">Internships</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Showcase Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative group max-w-[300px] sm:max-w-none w-full flex justify-center">
+          <div class="absolute -inset-2 bg-gradient-to-tr from-sky-400/40 via-cyan-400/30 to-blue-500/30 dark:from-cyan-500/40 dark:via-indigo-600/30 dark:to-sky-400/40 rounded-[44px] blur-2xl opacity-80 group-hover:opacity-100 transition duration-700"></div>
+
+          <div class="relative w-64 sm:w-80 rounded-[36px] sm:rounded-[40px] p-2.5 sm:p-3 bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-cyan-500/40 backdrop-blur-xl shadow-2xl overflow-hidden">
+            <div class="relative w-full h-[340px] sm:h-[410px] rounded-[28px] sm:rounded-[32px] overflow-hidden bg-[#0A101D] border border-sky-100 dark:border-slate-700/60">
+              <img 
+                src="profile.jpeg" 
+                alt="Poornima - Software & Data Engineer" 
+                class="w-full h-full object-cover object-top filter contrast-[1.05] brightness-[0.98] group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#080C14] via-[#0E1726]/30 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 bg-indigo-950/20 mix-blend-color pointer-events-none"></div>
+              <div class="absolute bottom-4 left-4 z-10 px-3 py-1 rounded-xl bg-[#0E1726]/90 backdrop-blur-md border border-indigo-400/40 text-indigo-300 font-mono-code text-xs font-semibold shadow-lg">
+                ★ 9.01 CGPA
+              </div>
+            </div>
+
+            <div class="mt-2.5 sm:mt-3 px-3.5 py-2 sm:py-2.5 rounded-2xl bg-sky-50/80 dark:bg-[#121D30] border border-sky-200/80 dark:border-slate-800 flex items-center justify-between font-mono-code text-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-slate-800 dark:text-slate-200 font-semibold text-[11px]">Learn | Evolve</span>
+              </div>
+              <span class="text-sky-600 dark:text-cyan-400 font-bold text-[11px]">2026 Batch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 2. ABOUT ME SECTION (MOBILE SCALED & RESPONSIVE)         -->
+    <!-- ========================================================= -->
+    <section id="about" class="pt-2">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        
+        <!-- LEFT: ROADMAP IMAGE (SCALED FOR MOBILE & DESKTOP) -->
+        <div class="lg:col-span-4 relative flex items-center justify-center h-[340px] sm:h-[420px] lg:h-[460px] overflow-hidden rounded-3xl bg-sky-50/90 dark:bg-transparent border border-sky-200 dark:border-transparent shadow-sm dark:shadow-none">
+          <div class="absolute inset-0 bg-sky-400/20 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="w-full h-full flex items-center justify-center relative overflow-hidden p-2">
+            <img 
+              src="journey-roadmap.png" 
+              alt="My Tech Journey Roadmap" 
+              class="w-full h-full object-contain filter contrast-[1.12] brightness-100 dark:brightness-[0.90] mix-blend-multiply dark:mix-blend-lighten opacity-95 transition-transform duration-500 scale-[1.2] sm:scale-[1.4] lg:scale-[1.75] origin-center"
+            />
+            <div class="hidden dark:block absolute inset-0 bg-gradient-to-t from-[#080C14] via-transparent to-[#080C14] opacity-60 pointer-events-none"></div>
+            <div class="hidden dark:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#080C14] opacity-50 pointer-events-none"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: WIDE ABOUT ME CARD -->
+        <div class="lg:col-span-8 p-6 sm:p-10 lg:p-12 rounded-3xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800/80 shadow-xl dark:shadow-2xl space-y-5 sm:space-y-6 relative overflow-hidden backdrop-blur-md">
+          <div class="absolute -top-24 -right-24 w-52 h-52 bg-sky-400/20 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+              ABOUT ME
+            </span>
+          </h2>
+
+          <div class="space-y-4 sm:space-y-5 text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
+            <p>
+              ⚡My journey into tech started with curiosity about people and how technology makes their lives easier. Then I began with UI/UX, and the Figma tool taught me to look beyond the interface, into the problem underneath. That curiosity pulled me into Python and SQL— a new way of thinking — and led me to start developing projects using Machine Learning.
+            </p>
+            <p>
+              ⚡Stepping into Power BI to learn insights excites me most: how data quietly tells a story and turns ideas into something real. Each project in my portfolio reflects real-world challenges I've tackled, showcasing my technical abilities and dedication to building meaningful, impactful solutions.
+            </p>
+          </div>
+
+          <!-- Bottom Footer Row: Download Resume Button 1 -->
+          <div class="pt-5 sm:pt-6 border-t border-sky-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-2 font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold">
+              <span>&gt; Thank you for exploring my work.</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-sky-500 dark:bg-cyan-400 animate-pulse"></span>
+            </div>
+
+            <a 
+              href="resume.pdf" 
+              download="Poornima_SM_Resume.pdf"
+              target="_blank"
+              class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 border border-sky-400/50 dark:border-cyan-500/30 hover:border-sky-500 dark:hover:border-cyan-400 text-sky-600 dark:text-cyan-400 font-mono-code text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-sm hover:scale-[1.03]"
+            >
+              <span>Download Resume</span>
+              <span class="text-sm">↓</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 3. TECHNICAL SKILLS                                      -->
+    <!-- ========================================================= -->
+    <section id="skills" class="space-y-6 pt-2">
+      <div class="space-y-2">
+        <span class="inline-block font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
+          // 02 Competencies
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+            TECHNICAL SKILLS
+          </span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-deep-card border-2 border-sky-300 hover:border-sky-500 dark:border-cyan-400/50 shadow-md shadow-sky-500/5 hover:-translate-y-1 transition duration-200">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight flex items-center gap-1.5">
+            <span class="text-sky-500">⚡</span>Python
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 font-medium leading-relaxed">Backend services, automation scripts, backbone of AI and ML evaluation pipelines.</p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-deep-card border-2 border-sky-300 hover:border-sky-500 dark:border-cyan-400/50 shadow-md shadow-sky-500/5 hover:-translate-y-1 transition duration-200">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight flex items-center gap-1.5">
+            <span class="text-sky-500">⚡</span>SQL
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 font-medium leading-relaxed">Relational schema design to handle data, complex joins, indexing, and aggregations.</p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-deep-card border-2 border-blue-300 hover:border-blue-500 dark:border-indigo-400/50 shadow-md shadow-sky-500/5 hover:-translate-y-1 transition duration-200">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight flex items-center gap-1.5">
+            <span class="text-blue-500">⚡</span>Power BI
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 font-medium leading-relaxed">DAX measures, dimensional data modeling, and interactive KPI tracking.</p>
+        </div>
+
+        <div class="p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-deep-card border-2 border-blue-300 hover:border-blue-500 dark:border-indigo-400/50 shadow-md shadow-sky-500/5 hover:-translate-y-1 transition duration-200">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1 tracking-tight flex items-center gap-1.5">
+            <span class="text-blue-500">⚡</span>Flask APIs
+          </h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 font-medium leading-relaxed">RESTful endpoint architecture for real-time model inference and web apps.</p>
+        </div>
+      </div>
+
+      <div class="p-5 sm:p-6 rounded-2xl bg-white/90 dark:bg-deep-card border border-sky-200 dark:border-deep-border flex flex-wrap items-center justify-between gap-3 font-mono-code text-sm shadow-sm">
+        <span class="text-xs uppercase font-bold text-sky-700 dark:text-deep-muted">Libraries &amp; Workflow:</span>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">Pandas</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">NumPy</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">Scikit-Learn</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">JavaScript</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">HTML5 / CSS3</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">Git &amp; GitHub</span>
+          <span class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-sky-50 dark:bg-deep-surface border border-sky-200 dark:border-deep-border text-sky-900 dark:text-slate-200 font-semibold text-xs sm:text-sm">Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. PROJECTS SECTION (RESPONSIVE GRID)                    -->
+    <!-- ========================================================= -->
+    <section id="projects" class="w-full pt-2">
+      
+      <div class="space-y-2 mb-6 sm:mb-8">
+        <span class="inline-block font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
+          // 03 Portfolio
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+            FEATURED PROJECTS
+          </span>
+        </h2>
+      </div>
+
+      <!-- 4 Cards Grid -->
+      <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        
+        <!-- CARD 1: LIVESTOCK -->
+        <div onclick="openModal('modal-livestock')" class="group relative rounded-3xl bg-white dark:bg-[#0E1726]/90 border border-sky-200 hover:border-sky-500 dark:border-slate-800 dark:hover:border-cyan-400/80 transition-all duration-300 flex flex-col justify-between h-[360px] sm:h-[380px] overflow-hidden cursor-pointer shadow-lg dark:shadow-xl hover:-translate-y-2">
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-sky-500/15 dark:bg-cyan-500/10 group-hover:bg-sky-500/25 rounded-full blur-3xl pointer-events-none transition duration-500"></div>
+
+          <div class="h-44 sm:h-48 w-full relative overflow-hidden bg-slate-900">
+            <img 
+              src="disease_wp.jpg" 
+              alt="Livestock Project" 
+              class="w-full h-full object-cover filter contrast-[1.15] brightness-90 group-hover:scale-105 transition-all duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+            <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-sky-400/40 text-sky-300 font-mono-code text-[10px] font-bold tracking-wider">
+              AI &amp; HEALTHCARE
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 pt-2 z-10 flex-1 flex flex-col justify-between">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-snug group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+              LIVESTOCK DISEASE PREDICTION API
+            </h3>
+            
+            <div class="pt-3 sm:pt-4 border-t border-sky-100 dark:border-slate-800/80 flex items-center justify-between font-mono-code text-xs font-bold text-sky-600 dark:text-cyan-400 group-hover:text-blue-600 dark:group-hover:text-white transition">
+              <span>VIEW DETAILS</span>
+              <span class="transform group-hover:translate-x-1.5 transition">&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: SPENDIQ -->
+        <div onclick="openModal('modal-spendiq')" class="group relative rounded-3xl bg-white dark:bg-[#0E1726]/90 border border-sky-200 hover:border-blue-500 dark:border-slate-800 dark:hover:border-indigo-400/80 transition-all duration-300 flex flex-col justify-between h-[360px] sm:h-[380px] overflow-hidden cursor-pointer shadow-lg dark:shadow-xl hover:-translate-y-2">
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-blue-500/15 group-hover:bg-blue-500/25 rounded-full blur-3xl pointer-events-none transition duration-500"></div>
+
+          <div class="h-44 sm:h-48 w-full relative overflow-hidden bg-slate-900">
+            <img 
+              src="expense_wp.avif" 
+              alt="Financial Data Analytics Ledger" 
+              class="w-full h-full object-cover filter contrast-[1.10] brightness-85 group-hover:scale-105 transition-all duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+            <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-blue-400/40 text-blue-300 font-mono-code text-[10px] font-bold tracking-wider">
+              DATA ENGINEERING &amp; BI
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 pt-2 z-10 flex-1 flex flex-col justify-between">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-indigo-400 transition">
+              EXPENSEIQ - SMART ANALYSIS
+            </h3>
+            
+            <div class="pt-3 sm:pt-4 border-t border-sky-100 dark:border-slate-800/80 flex items-center justify-between font-mono-code text-xs font-bold text-blue-600 dark:text-indigo-400 group-hover:text-sky-600 dark:group-hover:text-white transition">
+              <span>VIEW DETAILS</span>
+              <span class="transform group-hover:translate-x-1.5 transition">&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: HARVESTHUB -->
+        <div onclick="openModal('modal-harvesthub')" class="group relative rounded-3xl bg-white dark:bg-[#0E1726]/90 border border-sky-200 hover:border-emerald-500 dark:border-slate-800 dark:hover:border-emerald-400/80 transition-all duration-300 flex flex-col justify-between h-[360px] sm:h-[380px] overflow-hidden cursor-pointer shadow-lg dark:shadow-xl hover:-translate-y-2">
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-emerald-500/15 group-hover:bg-emerald-500/25 rounded-full blur-3xl pointer-events-none transition duration-500"></div>
+
+          <div class="h-44 sm:h-48 w-full relative overflow-hidden bg-slate-900">
+            <img 
+              src="organic_wp.webp" 
+              alt="Automated Precision Agriculture & Organic Crops" 
+              class="w-full h-full object-cover filter contrast-[1.15] brightness-85 group-hover:scale-105 transition-all duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+            <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-emerald-400/40 text-emerald-300 font-mono-code text-[10px] font-bold tracking-wider">
+              FULL STACK &amp; AI
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 pt-2 z-10 flex-1 flex flex-col justify-between">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
+              HARVESTHUB: ORGANIC PRODUCTS
+            </h3>
+            
+            <div class="pt-3 sm:pt-4 border-t border-sky-100 dark:border-slate-800/80 flex items-center justify-between font-mono-code text-xs font-bold text-emerald-600 dark:text-emerald-400 group-hover:text-slate-900 dark:group-hover:text-white transition">
+              <span>VIEW DETAILS</span>
+              <span class="transform group-hover:translate-x-1.5 transition">&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: CYBERSENTINEL -->
+        <div onclick="openModal('modal-cybersentinel')" class="group relative rounded-3xl bg-white dark:bg-[#0E1726]/90 border border-sky-200 hover:border-sky-500 dark:border-slate-800 dark:hover:border-sky-400/80 transition-all duration-300 flex flex-col justify-between h-[360px] sm:h-[380px] overflow-hidden cursor-pointer shadow-lg dark:shadow-xl hover:-translate-y-2">
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-sky-500/15 group-hover:bg-sky-500/25 rounded-full blur-3xl pointer-events-none transition duration-500"></div>
+
+          <div class="h-44 sm:h-48 w-full relative overflow-hidden bg-slate-900">
+            <img 
+              src="cyber_wp.jpg" 
+              alt="NETWORK INTRUSION DETECTION" 
+              class="w-full h-full object-cover filter contrast-[1.15] brightness-80 group-hover:scale-105 transition-all duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+            <div class="absolute top-3 sm:top-4 left-3 sm:left-4 z-10 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-sky-400/40 text-sky-300 font-mono-code text-[10px] font-bold tracking-wider">
+              CYBERSECURITY &amp; ML
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 pt-2 z-10 flex-1 flex flex-col justify-between">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition">
+              CYBER:NETWORK INTRUSION DETECTION
+            </h3>
+            
+            <div class="pt-3 sm:pt-4 border-t border-sky-100 dark:border-slate-800/80 flex items-center justify-between font-mono-code text-xs font-bold text-sky-600 dark:text-cyan-400 group-hover:text-slate-900 dark:group-hover:text-white transition">
+              <span>VIEW DETAILS</span>
+              <span class="transform group-hover:translate-x-1.5 transition">&rarr;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 5. INTERNSHIP EXPERIENCE SECTION                         -->
+    <!-- ========================================================= -->
+    <section id="internships" class="space-y-8 pt-2">
+      <div class="space-y-2">
+        <span class="inline-block font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
+          // 04 Experience
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+            INTERNSHIP EXPERIENCE
+          </span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+
+        <!-- INTERNSHIP 01: AI/ML INTERN -->
+        <div class="p-6 sm:p-9 rounded-3xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 backdrop-blur-xl shadow-lg dark:shadow-xl flex flex-col justify-between space-y-5 sm:space-y-6 group">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 text-sky-600 dark:text-cyan-400 font-mono-code text-[11px] font-bold uppercase tracking-wider">
+                Machine Learning
+              </span>
+              <span class="text-xs font-mono-code text-sky-700 dark:text-slate-400 font-bold">
+                JUN 2025 – JUL 2025
+              </span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+                AI / ML Intern
+              </h3>
+              <p class="text-xs sm:text-sm font-mono-code text-sky-600 dark:text-cyan-400 font-bold">
+                POLENZA TECH SOLUTIONS
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+              ⚡Developed an image classification model for automated waste segregation using Python, TensorFlow and Keras.<br>
+              ⚡Preprocessed and augmented image datasets to improve data quality and support model training.<br>
+              ⚡Gained hands-on experience in improving model performance and working with practical ML workflows.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-sky-100 dark:border-slate-800 flex flex-wrap gap-1.5 sm:gap-2 font-mono-code text-[11px]">
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Python</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Computer Vision</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Data Cleaning</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-100 border border-sky-300 text-sky-800 font-bold dark:bg-slate-900 dark:border-slate-800 dark:text-slate-300">91% Precision</span>
+          </div>
+        </div>
+
+        <!-- INTERNSHIP 02: UI/UX INTERN -->
+        <div class="p-6 sm:p-9 rounded-3xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 backdrop-blur-xl shadow-lg dark:shadow-xl flex flex-col justify-between space-y-5 sm:space-y-6 group">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-1 rounded-md bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 text-sky-600 dark:text-cyan-400 font-mono-code text-[11px] font-bold uppercase tracking-wider">
+                Product Design
+              </span>
+              <span class="text-xs font-mono-code text-sky-700 dark:text-slate-400 font-bold">
+                JUL 2024 – JUL 2024
+              </span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+                UI / UX Intern
+              </h3>
+              <p class="text-xs sm:text-sm font-mono-code text-sky-600 dark:text-cyan-400 font-bold">
+                RE-TECH SOLUTIONS
+              </p>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+              ⚡Designed a Flipkart-inspired e-commerce mobile app prototype in Figma, creating high-fidelity screens.<br>
+              ⚡Learned to design user-focused interfaces based on user needs and expectations.<br>
+              ⚡Understood user flow and visual hierarchy to create simple and intuitive experiences.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-sky-100 dark:border-slate-800 flex flex-wrap gap-1.5 sm:gap-2 font-mono-code text-[11px]">
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Figma</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Wireframing</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">Design Systems</span>
+            <span class="px-2 sm:px-2.5 py-1 rounded-md bg-sky-50 dark:bg-slate-900 border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-300 font-medium">User Flows</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 6. ACADEMIC BACKGROUND SECTION                           -->
+    <!-- ========================================================= -->
+    <section id="academics" class="space-y-8 pt-2">
+      <div class="space-y-2">
+        <span class="inline-block font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
+          // 05 Education
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+            ACADEMIC BACKGROUND
+          </span>
+        </h2>
+      </div>
+
+      <div class="space-y-5 sm:space-y-6">
+        <div class="p-6 sm:p-10 rounded-3xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 backdrop-blur-xl shadow-lg dark:shadow-xl space-y-4 sm:space-y-6">
+          <div class="space-y-2 sm:space-y-3">
+            <h3 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-snug">
+              Bachelor of Engineering – Computer Science
+            </h3>
+            <div class="inline-block px-3 py-1 rounded-md bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 text-sky-600 dark:text-cyan-400 font-mono-code text-xs font-bold uppercase tracking-wider">
+              Degree
+            </div>
+          </div>
+
+          <div class="space-y-2 sm:space-y-3 pt-2 font-mono-code text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="text-sky-500 text-base">🏛️</span>
+              <span class="tracking-wide">SRM VALLIAMMAI ENGINEERING COLLEGE</span>
+            </div>
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="text-sky-500 text-base">📅</span>
+              <span class="tracking-wide">OCT 2022 – MAY 2026</span>
+            </div>
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="text-sky-500 text-base">🎓</span>
+              <span class="tracking-wide">CGPA: <strong class="text-sky-600 dark:text-cyan-400 font-bold text-sm sm:text-base">9.01</strong> / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <div class="p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-md dark:shadow-none">
+            <div class="space-y-2">
+              <div class="inline-block px-2.5 py-0.5 rounded bg-sky-50 dark:bg-slate-800 text-sky-600 dark:text-cyan-400 font-mono-code text-[11px] font-bold uppercase tracking-wider">
+                Higher Secondary (12th)
+              </div>
+              <h4 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading uppercase">
+                Saraswathi Matric Hr Sec School
+              </h4>
+              <div class="flex items-center gap-2 text-xs font-mono-code text-slate-500 dark:text-slate-400">
+                <span>📅 2021 – 2022</span>
+                <span>•</span>
+                <span>Tamil Nadu State Board</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-sky-100 dark:border-slate-800 flex items-center justify-between font-mono-code">
+              <span class="text-xs text-sky-700 dark:text-slate-400 uppercase tracking-wider font-bold">Score</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">91%</span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-md dark:shadow-none">
+            <div class="space-y-2">
+              <div class="inline-block px-2.5 py-0.5 rounded bg-sky-50 dark:bg-slate-800 text-sky-600 dark:text-cyan-400 font-mono-code text-[11px] font-bold uppercase tracking-wider">
+                Secondary School (10th)
+              </div>
+              <h4 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading uppercase">
+                Saraswathi Matric Hr Sec School
+              </h4>
+              <div class="flex items-center gap-2 text-xs font-mono-code text-slate-500 dark:text-slate-400">
+                <span>📅 2019 – 2020</span>
+                <span>•</span>
+                <span>Tamil Nadu State Board</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-sky-100 dark:border-slate-800 flex items-center justify-between font-mono-code">
+              <span class="text-xs text-sky-700 dark:text-slate-400 uppercase tracking-wider font-bold">Score</span>
+              <span class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">96%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 7. CERTIFICATIONS                                        -->
+    <!-- ========================================================= -->
+    <section id="credentials" class="space-y-8 pt-2">
+      <div class="space-y-2">
+        <span class="inline-block font-mono-code text-xs text-sky-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
+          // 06 Qualifications
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading uppercase leading-none">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-400 dark:via-sky-400 dark:to-indigo-500 drop-shadow-[0_2px_14px_rgba(14,165,233,0.3)] dark:drop-shadow-[0_4px_24px_rgba(6,182,212,0.35)]">
+            VERIFIED CREDENTIALS
+          </span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div class="relative p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between group shadow-md dark:shadow-none">
+          <div class="flex items-start justify-between gap-4">
+            <span class="text-[11px] font-mono-code font-bold uppercase tracking-wider text-sky-600 dark:text-cyan-400">
+              Simplilearn
+            </span>
+            <div class="w-8 sm:w-9 h-8 sm:h-9 rounded-xl bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 flex items-center justify-center text-sky-600 dark:text-cyan-400 shadow-sm flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+          </div>
+          <div class="space-y-2.5 sm:space-y-3 pt-2">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading uppercase tracking-wide group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+              SQL for Data Analysis
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+              Learned to write structured database queries, handle multi-table joins, filter large datasets with subqueries, and prepare clean data for analytical reports.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between group shadow-md dark:shadow-none">
+          <div class="flex items-start justify-between gap-4">
+            <span class="text-[11px] font-mono-code font-bold uppercase tracking-wider text-sky-600 dark:text-cyan-400">
+              Infosys Springboard
+            </span>
+            <div class="w-8 sm:w-9 h-8 sm:h-9 rounded-xl bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 flex items-center justify-center text-sky-600 dark:text-cyan-400 shadow-sm flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+          </div>
+          <div class="space-y-2.5 sm:space-y-3 pt-2">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading uppercase tracking-wide group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+              Python Programming
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+              Covered programming logic, core data structures (lists, dictionaries), modular coding, and object-oriented principles to build dependable automation scripts.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#0E1726]/90 border border-sky-200 dark:border-slate-800 hover:border-sky-500 dark:hover:border-cyan-500/60 transition-all duration-300 flex flex-col justify-between group shadow-md dark:shadow-none">
+          <div class="flex items-start justify-between gap-4">
+            <span class="text-[11px] font-mono-code font-bold uppercase tracking-wider text-sky-600 dark:text-cyan-400">
+              Udemy
+            </span>
+            <div class="w-8 sm:w-9 h-8 sm:h-9 rounded-xl bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 flex items-center justify-center text-sky-600 dark:text-cyan-400 shadow-sm flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+          </div>
+          <div class="space-y-2.5 sm:space-y-3 pt-2">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-heading uppercase tracking-wide group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition">
+              Web Design &amp; Frontend
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+              Gained practical experience creating mobile-responsive layouts, mastering flexbox and CSS grids, and structuring semantic web pages with modern styling.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 8. CONTACT SECTION (MOBILE RESPONSIVE ACTIONS)            -->
+    <!-- ========================================================= -->
+    <section id="contact" class="p-6 sm:p-14 rounded-3xl bg-white/95 dark:bg-gradient-to-r dark:from-deep-card dark:via-deep-surface dark:to-deep-card border border-sky-200 dark:border-deep-border text-center space-y-6 relative overflow-hidden shadow-xl shadow-sky-500/10">
+      
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-72 h-72 bg-sky-500/20 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="space-y-2 relative z-10">
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight font-heading">
+          Let's discuss an opportunity.
+        </h2>
+        <p class="max-w-md mx-auto text-slate-600 dark:text-deep-muted text-xs sm:text-sm lg:text-base">
+          I am actively preparing for entry-level Software, Python Development, and Data Analytics roles.
+        </p>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/20 text-sky-600 dark:text-cyan-400 font-mono-code text-[11px] sm:text-xs font-bold">
+        <span>📍 Chennai, India</span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 pt-2 font-bold text-xs sm:text-sm font-heading relative z-10 w-full">
+        
+        <!-- Download Resume Button (Placement 2) -->
+        <a 
+          href="resume.pdf" 
+          download="Poornima_SM_Resume.pdf"
+          target="_blank"
+          class="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-500 dark:to-indigo-600 text-white shadow-lg shadow-sky-500/20 dark:shadow-cyan-500/20 hover:scale-105 transition duration-200 flex items-center justify-center gap-2 font-mono-code text-xs font-bold uppercase tracking-wider"
+        >
+          <span>Download Resume</span>
+          <span class="text-sm">↓</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:poornimasmpoorni@gmail.com" class="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-sky-300/80 dark:border-deep-border text-slate-800 dark:text-slate-200 hover:border-sky-500 dark:hover:border-cyan-400 transition bg-white/90 dark:bg-deep-bg hover:scale-105 duration-200 flex items-center justify-center gap-2 shadow-sm font-sans text-xs sm:text-sm">
+          <span>✉️</span>
+          <span>poornimasmpoorni@gmail.com</span>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+919444940779" class="w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-sky-300/80 dark:border-deep-border text-slate-800 dark:text-slate-200 hover:border-sky-500 dark:hover:border-cyan-400 transition bg-white/90 dark:bg-deep-bg hover:scale-105 duration-200 flex items-center justify-center gap-2 font-mono-code text-xs font-bold shadow-sm">
+          <span>📞</span>
+          <span>+91 9444940779</span>
+        </a>
+
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" class="flex-1 sm:flex-initial text-center px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-sky-300/80 dark:border-deep-border text-slate-800 dark:text-slate-200 hover:border-sky-500 dark:hover:border-cyan-400 transition bg-white/90 dark:bg-deep-bg hover:scale-105 duration-200 shadow-sm">
+            LinkedIn
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" class="flex-1 sm:flex-initial text-center px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-sky-300/80 dark:border-deep-border text-slate-800 dark:text-slate-200 hover:border-sky-500 dark:hover:border-cyan-400 transition bg-white/90 dark:bg-deep-bg hover:scale-105 duration-200 shadow-sm">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- POPUP CASE STUDY MODALS                                           -->
+  <!-- ================================================================= -->
+  <div id="modal-container" class="fixed inset-0 z-50 hidden modal-backdrop p-3 sm:p-6 lg:p-8 flex items-center justify-center">
+    
+    <!-- MODAL 1: LIVESTOCK -->
+    <div id="modal-livestock" class="project-modal hidden relative w-full max-w-5xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white dark:bg-[#0E1726] border border-sky-200 dark:border-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl space-y-6 sm:space-y-8 my-auto text-slate-800 dark:text-slate-200">
+      <div class="sticky -top-5 sm:-top-10 -mx-5 sm:-mx-10 px-5 sm:px-10 py-3 sm:py-4 bg-white/95 dark:bg-[#0E1726]/95 backdrop-blur-md border-b border-sky-200 dark:border-slate-800/80 flex items-center justify-between z-30">
+        <button onclick="closeModal()" class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-cyan-400 text-cyan-400 font-mono-code text-xs font-bold transition hover:bg-slate-800 shadow-md">
+          <span>&larr;</span>
+          <span>BACK</span>
+        </button>
+        <span class="text-xs font-mono-code text-slate-400 hidden sm:inline-block">ESC to close</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center pt-2">
+        <div class="lg:col-span-5 w-full">
+          <div class="w-full h-56 sm:h-72 rounded-2xl bg-slate-900 border border-sky-200 dark:border-slate-800 relative overflow-hidden shadow-xl group">
+            <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full custom-scrollbar scroll-smooth">
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="dhomepage.png" alt="Livestock Screen 1" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/30 text-[10px] font-mono-code text-sky-400 font-bold">Home</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="dprediction .png" alt="Livestock Screen 2" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/30 text-[10px] font-mono-code text-sky-400 font-bold">Prediction</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="dresult.png" alt="Livestock Screen 3" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/30 text-[10px] font-mono-code text-sky-400 font-bold">Result</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="dreport.png" alt="Livestock Screen 4" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/30 text-[10px] font-mono-code text-sky-400 font-bold">Report</span>
+              </div>
+            </div>
+            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/90 border border-sky-400/30 text-sky-400 font-mono-code text-[10px] font-bold flex items-center gap-1.5 shadow-md pointer-events-none">
+              <span>Swipe &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-2.5 sm:space-y-3">
+          <span class="inline-block px-2.5 sm:px-3 py-1 rounded-md bg-sky-500/15 dark:bg-cyan-500/10 border border-sky-400/40 dark:border-cyan-500/30 text-sky-600 dark:text-cyan-400 font-mono-code text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
+            AI ARCHITECTURE • VETERINARY HEALTHCARE
+          </span>
+          <h3 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-tight">
+            LIVESTOCK DISEASE PREDICTION &amp; DIAGNOSTIC API
+          </h3>
+          <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            • Disease Prediction in Livestock is a machine learning-based web application designed to predict possible livestock diseases using animal details and observed symptoms.<br>
+            • The project combines a trained Random Forest classification model with a Flask web application.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2">
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-2">
+            <span>💡</span>
+            <span>THE REAL-WORLD IMPACT</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔸 Enables early prediction of potential livestock diseases using symptoms and health parameters.<br>
+            🔸 Helps farmers and veterinarians identify health risks sooner and take timely action.<br>
+            🔸 Building technology with a purpose.
+          </p>
+        </div>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-600 dark:text-cyan-400 flex items-center gap-2">
+            <span>⚙️</span>
+            <span>TECHNICAL IMPLEMENTATION</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔹Built a Random Forest-based classification model using Python, Pandas, and NumPy to predict livestock diseases from health parameters and symptoms.<br>
+            🔹Integrated with a Flask REST API for real-time prediction through a web interface.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">HOW IT WORKS &amp; TECH ROLE</h4>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-3 text-xs sm:text-sm leading-relaxed">
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Data Engineering &amp; Preprocessing:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Cleaned, validated, and normalized multi-modal veterinary data including age, clinical vitals, and observed symptoms using Pandas and NumPy.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Feature Pipeline:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Structured categorical and numerical features into high-dimensional vectors via one-hot encoding and standardized scaling.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Supervised Learning (Random Forest):</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Implemented and tuned a Random Forest Classifier to map symptom combinations to specific veterinary conditions, mitigating overfitting.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Interactive Diagnostic UI:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Engineered a responsive interface where incoming user input routes through the API, returning real-time diagnostic predictions.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">TECHNOLOGIES USED</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-2.5 font-mono-code text-[10px] sm:text-[11px] font-bold text-center">
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">PYTHON</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">SCIKIT-LEARN</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">FLASK API</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">RANDOM FOREST</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">PANDAS</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">GUNICORN</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-4 border-t border-sky-200 dark:border-slate-800">
+        <a href="https://github.com/S-M-Poornima-22/Disease-prediction-in-Livestock" target="_blank" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-500 dark:to-indigo-600 hover:opacity-90 text-white font-mono-code text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+          <span>VIEW REPOSITORY &rarr;</span>
+        </a>
+        <button onclick="closeModal()" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl text-xs font-mono-code text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-sky-200 dark:border-slate-800 hover:border-sky-400 transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL 2: SPENDIQ -->
+    <div id="modal-spendiq" class="project-modal hidden relative w-full max-w-5xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white dark:bg-[#0E1726] border border-sky-200 dark:border-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl space-y-6 sm:space-y-8 my-auto text-slate-800 dark:text-slate-200">
+      <div class="sticky -top-5 sm:-top-10 -mx-5 sm:-mx-10 px-5 sm:px-10 py-3 sm:py-4 bg-white/95 dark:bg-[#0E1726]/95 backdrop-blur-md border-b border-sky-200 dark:border-slate-800/80 flex items-center justify-between z-30">
+        <button onclick="closeModal()" class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-cyan-400 text-cyan-400 font-mono-code text-xs font-bold transition hover:bg-slate-800 shadow-md">
+          <span>&larr;</span>
+          <span>BACK</span>
+        </button>
+        <span class="text-xs font-mono-code text-slate-400 hidden sm:inline-block">ESC to close</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center pt-2">
+        <div class="lg:col-span-5 w-full">
+          <div class="w-full h-56 sm:h-72 rounded-2xl bg-slate-900 border border-sky-200 dark:border-slate-800 relative overflow-hidden shadow-xl group">
+            <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full custom-scrollbar scroll-smooth">
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="eExpense_tracker.png" alt="Expense Tracker Home" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-blue-400/40 text-[10px] font-mono-code text-blue-400 font-bold">Home</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="eadd_expense.png" alt="Add Expense Screen" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-blue-400/40 text-[10px] font-mono-code text-blue-400 font-bold">Add Expense</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="epowerbi.png" alt="Power BI Analytics" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-blue-400/40 text-[10px] font-mono-code text-blue-400 font-bold">Report</span>
+              </div>
+            </div>
+            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/90 border border-blue-400/40 text-blue-400 font-mono-code text-[10px] font-bold flex items-center gap-1.5 shadow-md pointer-events-none">
+              <span>Swipe &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-2.5 sm:space-y-3">
+          <span class="inline-block px-2.5 sm:px-3 py-1 rounded-md bg-blue-500/15 dark:bg-indigo-500/10 border border-blue-400/40 dark:border-indigo-500/30 text-blue-600 dark:text-indigo-400 font-mono-code text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
+            DATA ENGINEERING &amp; BUSINESS INTELLIGENCE
+          </span>
+          <h3 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-tight">
+            EXPENSEIQ: SMART ANALYSIS
+          </h3>
+          <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            Personal Expense Tracker is a web application built to make everyday financial management structured. It bridges web development, data persistence, and interactive business intelligence.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2">
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-2">
+            <span>💡</span>
+            <span>THE IDEA</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔸Helps users track and organize daily expenses in one place instead of manual ledgers.<br>
+            🔸Makes spending patterns transparent through multi-criteria search, filtering, and Power BI visual dashboards.<br>
+            🔸Supports strategic budget awareness and proactive financial planning.
+          </p>
+        </div>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-blue-600 dark:text-indigo-400 flex items-center gap-2">
+            <span>⚙️</span>
+            <span>TECHNICAL IMPLEMENTATION</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔹Constructed a Flask-based expense management system with SQLite for reliable local storage.<br>
+            🔹Implemented CRUD operations, search, filtering, and CSV exports to prepare data pipelines.<br>
+            🔹Connected normalized data models into Power BI dashboards to track key KPIs.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">HOW IT WORKS &amp; TECH ROLE</h4>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-3 text-xs sm:text-sm leading-relaxed">
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-blue-600 dark:text-cyan-400 font-semibold">Data Ingestion &amp; Persistence:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Engineered a CRUD pipeline using Flask and SQLite to persist multi-attribute transactional data securely.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-blue-600 dark:text-cyan-400 font-semibold">Dynamic Retrieval:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Built database routes supporting multi-parameter filtering, dynamic search queries, and real-time ledger management.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-blue-600 dark:text-cyan-400 font-semibold">Automated Data Pipeline:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Developed automated export services to generate analysis-ready CSV payloads while ensuring relational integrity.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-blue-600 dark:text-cyan-400 font-semibold">Business Intelligence &amp; Analytics:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Designed interactive financial dashboards and DAX KPI models in Power BI to analyze cash flow, distributions, and trend anomalies.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">TECHNOLOGIES USED</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-2.5 font-mono-code text-[10px] sm:text-[11px] font-bold text-center">
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">SQL</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">POWER BI</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">DAX MODELING</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">DATA MODELING</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">PYTHON</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">API</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-4 border-t border-sky-200 dark:border-slate-800">
+        <a href="https://github.com/S-M-Poornima-22/ExpenseIQ-Smart-Analysis" target="_blank" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 dark:from-indigo-500 dark:to-cyan-500 hover:opacity-90 text-white font-mono-code text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+          <span>VIEW REPOSITORY &rarr;</span>
+        </a>
+        <button onclick="closeModal()" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl text-xs font-mono-code text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-sky-200 dark:border-slate-800 hover:border-sky-400 transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL 3: HARVESTHUB -->
+    <div id="modal-harvesthub" class="project-modal hidden relative w-full max-w-5xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white dark:bg-[#0E1726] border border-sky-200 dark:border-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl space-y-6 sm:space-y-8 my-auto text-slate-800 dark:text-slate-200">
+      <div class="sticky -top-5 sm:-top-10 -mx-5 sm:-mx-10 px-5 sm:px-10 py-3 sm:py-4 bg-white/95 dark:bg-[#0E1726]/95 backdrop-blur-md border-b border-sky-200 dark:border-slate-800/80 flex items-center justify-between z-30">
+        <button onclick="closeModal()" class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-cyan-400 text-cyan-400 font-mono-code text-xs font-bold transition hover:bg-slate-800 shadow-md">
+          <span>&larr;</span>
+          <span>BACK</span>
+        </button>
+        <span class="text-xs font-mono-code text-slate-400 hidden sm:inline-block">ESC to close</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center pt-2">
+        <div class="lg:col-span-5 w-full">
+          <div class="w-full h-56 sm:h-72 rounded-2xl bg-slate-900 border border-sky-200 dark:border-slate-800 relative overflow-hidden shadow-xl group">
+            <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full custom-scrollbar scroll-smooth">
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="hhomepage.png" alt="HarvestHub Home" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-emerald-400/30 text-[10px] font-mono-code text-emerald-400 font-bold">Home</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="hproducts.png" alt="Products Screen" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-emerald-400/30 text-[10px] font-mono-code text-emerald-400 font-bold">Products</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="hcart.png" alt="Cart Screen" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-emerald-400/30 text-[10px] font-mono-code text-emerald-400 font-bold">Cart</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="hAI_bot..png" alt="AI Bot Assistant" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-emerald-400/30 text-[10px] font-mono-code text-emerald-400 font-bold">AI Bot</span>
+              </div>
+            </div>
+            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/90 border border-emerald-400/30 text-emerald-400 font-mono-code text-[10px] font-bold flex items-center gap-1.5 shadow-md pointer-events-none">
+              <span>Swipe &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-2.5 sm:space-y-3">
+          <span class="inline-block px-2.5 sm:px-3 py-1 rounded-md bg-emerald-500/15 dark:bg-emerald-500/10 border border-emerald-400/40 dark:border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-mono-code text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
+            FULL STACK WEB • CONTEXTUAL AI
+          </span>
+          <h3 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-tight">
+            HARVESTHUB: ORGANIC PRODUCE PLATFORM &amp; AI
+          </h3>
+          <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            HarvestHub is a responsive organic commerce system connecting customers directly with fresh produce. Features structured product catalogs, state-managed carts, and rule-based AI recommendations.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2">
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-2">
+            <span>💡</span>
+            <span>THE REAL-WORLD USAGE</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔸Connects customers directly with fresh organic products sourced locally.<br> 
+            🔸Integrated AI assistant provides real-time nutritional insights and tailored product guidance.<br>
+            🔸Delivers frictionless cart handling across all mobile and desktop viewports.
+          </p>
+        </div>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+            <span>⚙️</span>
+            <span>TECHNICAL IMPLEMENTATION</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔹Built a Flask web application with dynamic JavaScript cart state management.<br>
+            🔹Integrated custom conversational endpoints to handle health recommendations.<br>
+            🔹Engineered modular backend routes for performant product catalog querying.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">HOW IT WORKS &amp; TECH ROLE</h4>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-3 text-xs sm:text-sm leading-relaxed">
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-emerald-600 dark:text-cyan-400 font-semibold">Architecture &amp; Responsive UI:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Engineered a cross-platform responsive catalog layout using modern CSS and modular JavaScript.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-emerald-600 dark:text-cyan-400 font-semibold">Cart Lifecycle:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Implemented client-side state handling to track item additions, quantity updates, and live subtotal calculations with zero layout shift.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-emerald-600 dark:text-cyan-400 font-semibold">Flask Backend Engine:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Built clean route controllers decoupling UI rendering from payload processing and server execution.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-emerald-600 dark:text-cyan-400 font-semibold">AI Assistant:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Designed rule-driven conversational endpoints to interpret user queries and deliver relevant organic health recommendations.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">TECHNOLOGIES USED</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-2.5 font-mono-code text-[10px] sm:text-[11px] font-bold text-center">
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">PYTHON (FLASK)</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">JAVASCRIPT</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">REST APIS</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">HTML5/CSS3</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">GUNICORN</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">RENDER</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-4 border-t border-sky-200 dark:border-slate-800">
+        <a href="https://github.com/S-M-Poornima-22/-HarvestHub-Organic-Produce-Platform-Smart-Assistant" target="_blank" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-mono-code text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+          <span>VIEW REPOSITORY &rarr;</span>
+        </a>
+        <button onclick="closeModal()" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl text-xs font-mono-code text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-sky-200 dark:border-slate-800 hover:border-sky-400 transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL 4: CYBERSENTINEL -->
+    <div id="modal-cybersentinel" class="project-modal hidden relative w-full max-w-5xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white dark:bg-[#0E1726] border border-sky-200 dark:border-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl space-y-6 sm:space-y-8 my-auto text-slate-800 dark:text-slate-200">
+      <div class="sticky -top-5 sm:-top-10 -mx-5 sm:-mx-10 px-5 sm:px-10 py-3 sm:py-4 bg-white/95 dark:bg-[#0E1726]/95 backdrop-blur-md border-b border-sky-200 dark:border-slate-800/80 flex items-center justify-between z-30">
+        <button onclick="closeModal()" class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-900 border border-slate-700/80 hover:border-cyan-400 text-cyan-400 font-mono-code text-xs font-bold transition hover:bg-slate-800 shadow-md">
+          <span>&larr;</span>
+          <span>BACK</span>
+        </button>
+        <span class="text-xs font-mono-code text-slate-400 hidden sm:inline-block">ESC to close</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center pt-2">
+        <div class="lg:col-span-5 w-full">
+          <div class="w-full h-56 sm:h-72 rounded-2xl bg-slate-900 border border-sky-200 dark:border-slate-800 relative overflow-hidden shadow-xl group">
+            <div class="flex overflow-x-auto snap-x snap-mandatory h-full w-full custom-scrollbar scroll-smooth">
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="ihomepage.jpg" alt="CyberSentinel Home" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/40 text-[10px] font-mono-code text-sky-400 font-bold">Home</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="iprediction1.jpg" alt="Prediction Telemetry 1" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/40 text-[10px] font-mono-code text-sky-400 font-bold">Prediction 1</span>
+              </div>
+              <div class="snap-center shrink-0 w-full h-full relative">
+                <img src="iprediction2.jpg" alt="Prediction Telemetry 2" class="w-full h-full object-cover object-top" onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-950/90 border border-sky-400/40 text-[10px] font-mono-code text-sky-400 font-bold">Prediction 2</span>
+              </div>
+            </div>
+            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/90 border border-sky-400/40 text-sky-400 font-mono-code text-[10px] font-bold flex items-center gap-1.5 shadow-md pointer-events-none">
+              <span>Swipe &rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-2.5 sm:space-y-3">
+          <span class="inline-block px-2.5 sm:px-3 py-1 rounded-md bg-sky-500/15 dark:bg-sky-500/10 border border-sky-400/40 dark:border-sky-500/30 text-sky-600 dark:text-sky-400 font-mono-code text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
+            CYBERSECURITY &amp; MACHINE LEARNING RESEARCH
+          </span>
+          <h3 class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white font-heading uppercase tracking-tight leading-tight">
+            CYBERSENTINEL: NETWORK INTRUSION DETECTION
+          </h3>
+          <p class="text-xs sm:text-sm lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            A machine learning intrusion detection system evaluating traffic telemetry to expose anomalous patterns, leveraging Double Deep Q-Networks (DDQN) with meta-adaptive rewards.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2">
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-2">
+            <span>💡</span>
+            <span>THE REAL-WORLD USAGE</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔸Detects malicious network signatures early through behavioural traffic anomaly recognition.<br>
+            🔸Accelerates incident response triage for network security administrators.<br>
+            🔸Calibrates detection sensitivity against evolving adversarial zero-day attack tactics.
+          </p>
+        </div>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-2">
+          <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400 flex items-center gap-2">
+            <span>⚙️</span>
+            <span>TECHNICAL IMPLEMENTATION (ML CORE LEAD)</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            🔹Built a DDQN-based reinforcement intrusion model with meta-adaptive reward heuristics.<br>
+            🔹Engineered high-throughput Flask API endpoints to ingest multi-dimensional network packets.<br>
+            🔹Benchmarked inference latency for real-time traffic filtering and classification.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">HOW IT WORKS &amp; TECH ROLE</h4>
+        <div class="p-5 sm:p-6 rounded-2xl bg-sky-50/70 dark:bg-[#080C14] border border-sky-200 dark:border-slate-800 space-y-3 text-xs sm:text-sm leading-relaxed">
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Ingestion &amp; Feature Engineering:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Engineered Python data pipelines to parse, scale, and normalize connection behavioral flow attributes.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Deep Reinforcement Learning:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Implemented a Double Deep Q-Network policy architecture to isolate high-risk attack vectors from benign activity.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Meta-Adaptive Rewards:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Programmed reward functions allowing the model agent to continuously adapt decision thresholds.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-2.5 sm:gap-3">
+            <span class="text-base sm:text-lg flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-sky-600 dark:text-cyan-400 font-semibold">Real-Time Flask API:</strong>
+              <span class="text-slate-700 dark:text-slate-300"> Containerized the inference pipeline behind low-latency REST endpoints for live security telemetry evaluation.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <h4 class="text-xs font-mono-code font-bold uppercase tracking-wider text-sky-800 dark:text-slate-400">TECHNOLOGIES USED</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-2.5 font-mono-code text-[10px] sm:text-[11px] font-bold text-center">
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">PYTHON</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">SCIKIT-LEARN</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">FEATURE SELECTION</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">NETWORK SECURITY</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">TEAM R&amp;D</span>
+          <span class="py-2 sm:py-2.5 px-2 rounded-xl bg-sky-50 dark:bg-[#121D30] border border-sky-200 dark:border-slate-800 text-sky-900 dark:text-slate-200">DATA PIPELINES</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 pt-4 border-t border-sky-200 dark:border-slate-800">
+        <a href="https://github.com/S-M-Poornima-22/Network-Intrusion-Detection" target="_blank" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 dark:from-cyan-500 dark:to-indigo-600 hover:opacity-90 text-white font-mono-code text-xs font-bold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+          <span>VIEW REPOSITORY &rarr;</span>
+        </a>
+        <button onclick="closeModal()" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl text-xs font-mono-code text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-sky-200 dark:border-slate-800 hover:border-sky-400 transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // THEME TOGGLE
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleIcon = document.getElementById('theme-toggle-icon');
+
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      themeToggleIcon.textContent = '☀️';
+    } else {
+      document.documentElement.classList.add('dark');
+      themeToggleIcon.textContent = '🌙';
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeToggleIcon.textContent = '☀️';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleIcon.textContent = '🌙';
+      }
+    });
+
+    // MODAL POPUP CONTROLLER
+    function openModal(modalId) {
+      document.getElementById('modal-container').classList.remove('hidden');
+      document.querySelectorAll('.project-modal').forEach(m => m.classList.add('hidden'));
+      document.getElementById(modalId).classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal-container').classList.add('hidden');
+      document.querySelectorAll('.project-modal').forEach(m => m.classList.add('hidden'));
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    document.getElementById('modal-container').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
